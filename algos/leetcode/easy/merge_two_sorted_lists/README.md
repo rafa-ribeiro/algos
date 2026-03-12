@@ -56,7 +56,7 @@ deve ser o próximo nó da lista mesclada.
 Esse trecho abaixo faz isso:
 
 ```python
-if not list1:
+    if not list1:
         return list2
 
     if not list2:
@@ -66,7 +66,7 @@ if not list1:
 2. A partir de agora, sabemos que ambas as listas têm pelo menos um nó. Comparamos então os valores de cada nó e o menor valor será o primeiro nó da lista mesclada.
 
 ```python
-if list1.value <= list2.value:
+    if list1.value <= list2.value:
         merged_list = list1
         list1 = list1.next # Se nó 1 for menor, avançamos para o próximo nó da lista 1.
     else:
@@ -74,9 +74,9 @@ if list1.value <= list2.value:
         list2 = list2.next # Se nó 2 for menor, avançamos para o próximo nó da lista 2.
 ```
 
-**Obs1:** Importante prestar atenção nesse ponto que devemos atualizar o ponteiro da lista que teve seu nó adicionado à lista mesclada, para o próximo nó, pois na próxima comparação devemos comparar os próximos nós de cada lista.
+    **Obs1:** Importante prestar atenção nesse ponto que devemos atualizar o ponteiro da lista que teve seu nó adicionado à lista mesclada, para o próximo nó, pois na próxima comparação devemos comparar os próximos nós de cada lista.
 
-**Obs2:** Importante frisar aqui também que o nosso algoritmo deve retornar o nó inicial da lista mesclada, e nesse momento já sabemos qual é o nó inicial e podemos apenas guardá-lo e retorná-lo no final do algoritmo.
+    **Obs2:** Importante frisar aqui também que o nosso algoritmo deve retornar o nó inicial da lista mesclada, e nesse momento já sabemos qual é o nó inicial e podemos apenas guardá-lo e retorná-lo no final do algoritmo.
 
 3. Agora estamos numa parte bacana do algoritmo porque como estamos trabalhando com listas ligadas e elas são ordenadas, 
 podemos usar dessa característica para comparar os nós seguintes apenas se ambas as listas ainda tiverem nós. Se uma das listas chegar ao fim, a outra lista já estará ordenada e podemos simplesmente adicionar o nó restante no final da lista mesclada.
@@ -94,7 +94,7 @@ podemos usar dessa característica para comparar os nós seguintes apenas se amb
         curr_node = curr_node.next
 ```
 
-**Obs:** Note que o ponteiro `curr_node` é atualizado a cada iteração do loop, para apontar para o último nó adicionado à lista mesclada. Isso é importante para garantir que os nós sejam adicionados na ordem correta.
+    **Obs:** Note que o ponteiro `curr_node` é atualizado a cada iteração do loop, para apontar para o último nó adicionado à lista mesclada. Isso é importante para garantir que os nós sejam adicionados na ordem correta.
 
 4. E para finalizar, se uma das listas chegar ao fim, a execução do while será interrompida, então precisamos saber qual das listas chegou ao fim para adicionar o restante da outra lista no final da lista mesclada.
 
